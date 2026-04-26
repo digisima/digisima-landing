@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digisima — Conectamos ideas con tecnología</title>
+  <meta name="description" content="Estudio de tecnología en Guatemala. Diseñamos, desarrollamos y desplegamos soluciones digitales: software a medida, automatización, infraestructura cloud y activos digitales." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://digisima.com" />
+  <meta property="og:title" content="Digisima — Conectamos ideas con tecnología" />
+  <meta property="og:description" content="Estudio de tecnología que diseña, desarrolla y conecta soluciones digitales para empresas que quieren operar mejor, crecer más rápido o explorar nuevos mercados." />
+  <meta property="og:locale" content="es_GT" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='0' y='0' width='28' height='28' rx='5' fill='%23F08C2C'/%3E%3Ccircle cx='86' cy='14' r='14' fill='%231E3A8A'/%3E%3Ccircle cx='14' cy='86' r='14' fill='%231E3A8A'/%3E%3Crect x='72' y='72' width='28' height='28' rx='5' fill='%23F08C2C'/%3E%3C/svg%3E" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary: #1E3A8A;
+      --primary-dark: #0F1F4F;
+      --secondary: #F08C2C;
+    }
+    * { font-family: 'Inter', sans-serif; }
+    html { scroll-behavior: smooth; }
+    body { background-color: #ffffff; color: #1F2937; -webkit-font-smoothing: antialiased; }
+
+    .gradient-hero {
+      background:
+        radial-gradient(ellipse at top right, rgba(240, 140, 44, 0.18) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom left, rgba(30, 58, 138, 0.4) 0%, transparent 50%),
+        linear-gradient(135deg, #0A1838 0%, #15296C 50%, #1E3A8A 100%);
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, #F08C2C 0%, #FFB366 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .gradient-blockchain {
+      background:
+        radial-gradient(circle at 20% 30%, rgba(240, 140, 44, 0.15) 0%, transparent 40%),
+        linear-gradient(135deg, #0A1838 0%, #1E3A8A 100%);
+    }
+
+    .text-primary { color: var(--primary); }
+    .bg-primary { background-color: var(--primary); }
+    .text-secondary { color: var(--secondary); }
+    .bg-secondary { background-color: var(--secondary); }
+    .border-primary { border-color: var(--primary); }
+    .border-secondary { border-color: var(--secondary); }
+    .hover-bg-primary:hover { background-color: var(--primary); }
+    .hover-bg-secondary:hover { background-color: #d77a1f; }
+
+    .card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 25px -5px rgba(30, 58, 138, 0.15), 0 10px 10px -5px rgba(30, 58, 138, 0.04);
+      border-color: rgba(30, 58, 138, 0.3);
+    }
+
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--secondary);
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .pulse-dot {
+      animation: pulseDot 2s ease-in-out infinite;
+    }
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.3); }
+    }
+
+    .grid-pattern {
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="flex items-center gap-3">
+        <svg width="36" height="36" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="20" y1="14" x2="50" y2="50" stroke="#1E3A8A" stroke-width="3.5" />
+          <line x1="80" y1="14" x2="50" y2="50" stroke="#1E3A8A" stroke-width="3.5" />
+          <line x1="20" y1="86" x2="50" y2="50" stroke="#1E3A8A" stroke-width="3.5" />
+          <line x1="80" y1="86" x2="50" y2="50" stroke="#1E3A8A" stroke-width="3.5" />
+          <rect x="0" y="0" width="28" height="28" rx="5" fill="#F08C2C" />
+          <circle cx="86" cy="14" r="14" fill="#1E3A8A" />
+          <circle cx="14" cy="86" r="14" fill="#1E3A8A" />
+          <rect x="72" y="72" width="28" height="28" rx="5" fill="#F08C2C" />
+          <circle cx="50" cy="50" r="11" fill="#1E3A8A" />
+        </svg>
+        <span class="font-extrabold text-xl tracking-tight text-gray-900">DIGISIMA</span>
+      </a>
+      <div class="hidden md:flex items-center space-x-10 text-sm font-medium text-gray-700">
+        <a href="#servicios" class="nav-link hover:text-primary transition">Servicios</a>
+        <a href="#metodo" class="nav-link hover:text-primary transition">Cómo trabajamos</a>
+        <a href="#sectores" class="nav-link hover:text-primary transition">Sectores</a>
+        <a href="#contacto" class="nav-link hover:text-primary transition">Contacto</a>
+      </div>
+      <a href="mailto:contacto@digisima.com" class="bg-primary text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:opacity-90 transition shadow-md shadow-blue-900/20">
+        Hablemos
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="gradient-hero text-white pt-40 pb-32 px-6 relative overflow-hidden">
+    <div class="absolute inset-0 grid-pattern"></div>
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="max-w-4xl">
+        <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-8">
+          <span class="w-2 h-2 bg-secondary rounded-full pulse-dot"></span>
+          <span class="text-sm font-medium">Estudio de tecnología · Guatemala</span>
+        </div>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] mb-8 tracking-tight">
+          Conectamos ideas<br />
+          con <span class="gradient-text">tecnología</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-blue-100 mb-12 leading-relaxed max-w-3xl">
+          Diseñamos, desarrollamos y desplegamos soluciones digitales para empresas, profesionales y emprendedores que quieren operar mejor, crecer más rápido o explorar nuevos mercados.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#contacto" class="bg-secondary hover-bg-secondary text-white px-8 py-4 rounded-lg font-semibold text-lg transition shadow-lg shadow-orange-500/30">
+            Conversemos tu proyecto
+          </a>
+          <a href="#servicios" class="border border-white/30 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/10 transition">
+            Ver servicios →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="py-24 px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="max-w-3xl mb-16">
+        <p class="text-secondary font-semibold text-sm uppercase tracking-wider mb-4">Lo que hacemos</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
+          Tecnología aplicada a la realidad de tu operación
+        </h2>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Desde una integración puntual hasta una plataforma completa. Trabajamos con tecnologías modernas, arquitecturas que escalan y procesos que se adaptan al ritmo de tu negocio.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="card-hover bg-white border border-gray-200 rounded-2xl p-8">
+          <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Desarrollo a medida</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Web apps, APIs, plataformas internas y sistemas que resuelven exactamente lo que tu negocio necesita. Sin templates rígidos.
+          </p>
+        </div>
+
+        <div class="card-hover bg-white border border-gray-200 rounded-2xl p-8">
+          <div class="w-14 h-14 bg-orange-50 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Automatización de procesos</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Eliminamos el trabajo repetitivo. Conectamos sistemas, automatizamos flujos y devolvemos horas a tu equipo cada semana.
+          </p>
+        </div>
+
+        <div class="card-hover bg-white border border-gray-200 rounded-2xl p-8">
+          <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Integraciones y APIs</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Conectamos tus sistemas con pasarelas de pago, ERPs, CRMs, herramientas externas y cualquier API moderna o legacy.
+          </p>
+        </div>
+
+        <div class="card-hover bg-white border border-gray-200 rounded-2xl p-8">
+          <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Infraestructura cloud</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Hosting administrado, deployment continuo, monitoreo y respaldos. Tu sistema corriendo 24/7 sin que tengas que pensar en el servidor.
+          </p>
+        </div>
+
+        <div class="card-hover bg-white border border-gray-200 rounded-2xl p-8">
+          <div class="w-14 h-14 bg-orange-50 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Consultoría tecnológica</h3>
+          <p class="text-gray-600 leading-relaxed">
+            ¿Qué stack? ¿Cuándo migrar? ¿Construir o comprar? Te acompañamos en las decisiones técnicas que definen los próximos años de tu producto.
+          </p>
+        </div>
+
+        <div class="card-hover bg-gradient-to-br from-blue-900 to-blue-700 text-white rounded-2xl p-8 relative overflow-hidden border border-blue-700">
+          <div class="absolute top-4 right-4 bg-secondary/20 border border-secondary/40 text-secondary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+            Próximamente
+          </div>
+          <div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Activos digitales</h3>
+          <p class="text-blue-100 leading-relaxed">
+            Tokenización, integración con redes blockchain y soluciones Web3 para empresas que están explorando nuevos modelos de negocio.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METODO -->
+  <section id="metodo" class="py-24 px-6 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <div class="max-w-3xl mb-16">
+        <p class="text-secondary font-semibold text-sm uppercase tracking-wider mb-4">Cómo trabajamos</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
+          Un proceso ordenado, sin sorpresas
+        </h2>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Cada proyecto sigue un flujo claro de cuatro fases. Vos sabés exactamente qué pasa, cuándo, y qué se entrega en cada paso. Sin caja negra ni sorpresas a fin de mes.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white p-8 rounded-2xl border border-gray-200">
+          <div class="text-5xl font-extrabold text-primary/15 mb-4 leading-none">01</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Diagnóstico</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Conversamos con tu equipo, entendemos el problema real y mapeamos el alcance. Sin asumir, sin romper antes de saber.
+          </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl border border-gray-200">
+          <div class="text-5xl font-extrabold text-primary/15 mb-4 leading-none">02</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Diseño</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Proponemos arquitectura, stack y plan. Cotización clara con tiempos, entregables y supuestos por escrito.
+          </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl border border-gray-200">
+          <div class="text-5xl font-extrabold text-primary/15 mb-4 leading-none">03</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Construcción</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Sprints semanales con entregas verificables. Comunicación constante. Acceso permanente al avance.
+          </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl border border-gray-200">
+          <div class="text-5xl font-extrabold text-primary/15 mb-4 leading-none">04</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Operación</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Mantenimiento, monitoreo, mejoras y evolución. Tu sistema sigue creciendo con tu negocio.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTORES -->
+  <section id="sectores" class="py-24 px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="max-w-3xl mb-16">
+        <p class="text-secondary font-semibold text-sm uppercase tracking-wider mb-4">Para quién trabajamos</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
+          Empresas, profesionales y emprendedores
+        </h2>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Nuestro enfoque es agnóstico al sector y al tamaño. Trabajamos igual con una corporación que con un profesional independiente o un emprendedor que está arrancando. Lo que importa es que el problema tenga sentido resolverlo con tecnología.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div class="bg-gray-50 hover:bg-blue-50 transition-colors rounded-xl p-6 border border-gray-100">
+          <svg class="w-6 h-6 text-primary mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          <h3 class="font-semibold text-gray-900">Salud y laboratorios</h3>
+        </div>
+        <div class="bg-gray-50 hover:bg-blue-50 transition-colors rounded-xl p-6 border border-gray-100">
+          <svg class="w-6 h-6 text-primary mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          <h3 class="font-semibold text-gray-900">Comercio y retail</h3>
+        </div>
+        <div class="bg-gray-50 hover:bg-blue-50 transition-colors rounded-xl p-6 border border-gray-100">
+          <svg class="w-6 h-6 text-primary mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          <h3 class="font-semibold text-gray-900">Servicios profesionales</h3>
+        </div>
+        <div class="bg-gray-50 hover:bg-blue-50 transition-colors rounded-xl p-6 border border-gray-100">
+          <svg class="w-6 h-6 text-primary mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/></svg>
+          <h3 class="font-semibold text-gray-900">Finanzas y fintech</h3>
+        </div>
+        <div class="bg-gray-50 hover:bg-blue-50 transition-colors rounded-xl p-6 border border-gray-100">
+          <svg class="w-6 h-6 text-primary mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+          <h3 class="font-semibold text-gray-900">Educación</h3>
+        </div>
+        <div class="bg-gray-50 hover:bg-blue-50 transition-colors rounded-xl p-6 border border-gray-100">
+          <svg class="w-6 h-6 text-primary mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          <h3 class="font-semibold text-gray-900">Industria y manufactura</h3>
+        </div>
+        <div class="bg-gray-50 hover:bg-blue-50 transition-colors rounded-xl p-6 border border-gray-100">
+          <svg class="w-6 h-6 text-primary mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11m16-11v11M8 14v3m4-3v3m4-3v3"/></svg>
+          <h3 class="font-semibold text-gray-900">Sector público</h3>
+        </div>
+        <div class="bg-gray-50 hover:bg-blue-50 transition-colors rounded-xl p-6 border border-gray-100">
+          <svg class="w-6 h-6 text-primary mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          <h3 class="font-semibold text-gray-900">Startups y nuevos modelos</h3>
+        </div>
+        <div class="bg-gray-50 hover:bg-blue-50 transition-colors rounded-xl p-6 border border-gray-100">
+          <svg class="w-6 h-6 text-primary mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          <h3 class="font-semibold text-gray-900">Profesionales independientes</h3>
+        </div>
+        <div class="bg-gray-50 hover:bg-blue-50 transition-colors rounded-xl p-6 border border-gray-100">
+          <svg class="w-6 h-6 text-primary mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+          <h3 class="font-semibold text-gray-900">Emprendedores</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTIVOS DIGITALES SPOTLIGHT -->
+  <section class="py-24 px-6 gradient-blockchain text-white relative overflow-hidden">
+    <div class="absolute inset-0 grid-pattern"></div>
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="text-secondary font-semibold text-sm uppercase tracking-wider mb-4">Lo que viene</p>
+          <h2 class="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
+            Activos digitales <br/>y blockchain
+          </h2>
+          <p class="text-xl text-blue-100 mb-6 leading-relaxed">
+            La próxima frontera para empresas que quieren explorar nuevos modelos: tokenización de activos, integración con Web3 y soluciones blockchain con propósito real.
+          </p>
+          <p class="text-lg text-blue-200 mb-8 leading-relaxed">
+            Estamos construyendo capacidades en este espacio. Si tu empresa está pensando en moverse hacia ahí, conversemos antes de que la curva de aprendizaje te alcance.
+          </p>
+          <a href="mailto:contacto@digisima.com?subject=Activos%20digitales" class="inline-flex items-center gap-2 bg-secondary hover-bg-secondary text-white px-6 py-3 rounded-lg font-semibold transition shadow-lg shadow-orange-500/30">
+            Hablemos sobre activos digitales
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+        <div class="relative h-80 hidden md:block">
+          <svg class="w-full h-full" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="200" cy="200" r="80" stroke="#F08C2C" stroke-width="2" opacity="0.5"/>
+            <circle cx="200" cy="200" r="120" stroke="#F08C2C" stroke-width="1.5" opacity="0.3"/>
+            <circle cx="200" cy="200" r="160" stroke="#F08C2C" stroke-width="1" opacity="0.2"/>
+            <circle cx="200" cy="200" r="20" fill="#F08C2C"/>
+            <circle cx="120" cy="120" r="14" fill="#1E3A8A" stroke="#fff" stroke-width="2"/>
+            <circle cx="280" cy="120" r="14" fill="#1E3A8A" stroke="#fff" stroke-width="2"/>
+            <circle cx="120" cy="280" r="14" fill="#1E3A8A" stroke="#fff" stroke-width="2"/>
+            <circle cx="280" cy="280" r="14" fill="#1E3A8A" stroke="#fff" stroke-width="2"/>
+            <circle cx="60" cy="200" r="10" fill="#1E3A8A" stroke="#fff" stroke-width="2"/>
+            <circle cx="340" cy="200" r="10" fill="#1E3A8A" stroke="#fff" stroke-width="2"/>
+            <circle cx="200" cy="60" r="10" fill="#1E3A8A" stroke="#fff" stroke-width="2"/>
+            <circle cx="200" cy="340" r="10" fill="#1E3A8A" stroke="#fff" stroke-width="2"/>
+            <line x1="200" y1="200" x2="120" y2="120" stroke="#fff" stroke-width="1.5" opacity="0.4"/>
+            <line x1="200" y1="200" x2="280" y2="120" stroke="#fff" stroke-width="1.5" opacity="0.4"/>
+            <line x1="200" y1="200" x2="120" y2="280" stroke="#fff" stroke-width="1.5" opacity="0.4"/>
+            <line x1="200" y1="200" x2="280" y2="280" stroke="#fff" stroke-width="1.5" opacity="0.4"/>
+            <line x1="200" y1="200" x2="60" y2="200" stroke="#fff" stroke-width="1" opacity="0.3"/>
+            <line x1="200" y1="200" x2="340" y2="200" stroke="#fff" stroke-width="1" opacity="0.3"/>
+            <line x1="200" y1="200" x2="200" y2="60" stroke="#fff" stroke-width="1" opacity="0.3"/>
+            <line x1="200" y1="200" x2="200" y2="340" stroke="#fff" stroke-width="1" opacity="0.3"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="py-24 px-6 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <p class="text-secondary font-semibold text-sm uppercase tracking-wider mb-4">Hablemos</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
+          ¿Tenés un proyecto en mente?
+        </h2>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Una primera conversación es siempre gratis y confidencial. Te respondemos en menos de 24 horas hábiles.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <a href="mailto:contacto@digisima.com" class="group bg-gray-50 hover:bg-blue-50 transition rounded-2xl p-8 text-center border border-gray-100">
+          <div class="w-14 h-14 bg-white rounded-xl flex items-center justify-center mb-6 mx-auto group-hover:bg-primary transition shadow-sm">
+            <svg class="w-7 h-7 text-primary group-hover:text-white transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-2">Email</h3>
+          <p class="text-primary font-medium">contacto@digisima.com</p>
+        </a>
+
+        <div class="bg-gray-50 rounded-2xl p-8 text-center border border-gray-100">
+          <div class="w-14 h-14 bg-white rounded-xl flex items-center justify-center mb-6 mx-auto shadow-sm">
+            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-2">Ubicación</h3>
+          <p class="text-gray-600">Ciudad de Guatemala<br />Guatemala, C.A.</p>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center">
+        <a href="mailto:contacto@digisima.com" class="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-lg font-semibold text-lg hover:opacity-90 transition shadow-lg shadow-blue-900/20">
+          Escribinos ahora
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-gray-400 py-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-3">
+          <svg width="32" height="32" viewBox="0 0 100 100" fill="none">
+            <line x1="20" y1="14" x2="50" y2="50" stroke="#F08C2C" stroke-width="3.5" />
+            <line x1="80" y1="14" x2="50" y2="50" stroke="#F08C2C" stroke-width="3.5" />
+            <line x1="20" y1="86" x2="50" y2="50" stroke="#F08C2C" stroke-width="3.5" />
+            <line x1="80" y1="86" x2="50" y2="50" stroke="#F08C2C" stroke-width="3.5" />
+            <rect x="0" y="0" width="28" height="28" rx="5" fill="#F08C2C" />
+            <circle cx="86" cy="14" r="14" fill="#1E3A8A" />
+            <circle cx="14" cy="86" r="14" fill="#1E3A8A" />
+            <rect x="72" y="72" width="28" height="28" rx="5" fill="#F08C2C" />
+            <circle cx="50" cy="50" r="11" fill="#1E3A8A" />
+          </svg>
+          <span class="font-bold text-white tracking-tight">DIGISIMA</span>
+        </div>
+        <div class="flex gap-6 text-sm">
+          <a href="/privacidad" class="hover:text-white transition">Privacidad</a>
+          <a href="/terminos" class="hover:text-white transition">Términos</a>
+          <a href="mailto:contacto@digisima.com" class="hover:text-white transition">Contacto</a>
+        </div>
+        <p class="text-sm text-center md:text-right">
+          © 2026 Digisima Sociedad Anónima<br/>
+          <span class="text-xs">Guatemala · Todos los derechos reservados</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
